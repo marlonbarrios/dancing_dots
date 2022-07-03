@@ -1,18 +1,20 @@
 let colorPicker;
 
 let settings = {
-  res: 0.0036,
-  alpha: 100,
-  nFrames: 150,
-  dots: true,
-  nDots: [1],
+  res: 0.0026,
+  alpha: 50,
+  nFrames: 800,
+  dots: false,
+  nDots: [0],
   lines: false,
   red: 0,
   green: 0,
   blue: 0,
   play: true,
-  weight: 5,
-  curves: false
+  weight: 2,
+  curves: false,
+  square: false,
+  circle: true
 
 
 }
@@ -30,13 +32,16 @@ gui.add(settings, 'weight', 1,40);
 gui.add(settings, 'nDots', [0,1, 2,3,4,5,6]);
 gui.add(settings, 'lines', false, true);
 gui.add(settings, 'curves', false, true);
-
+gui.add(settings, 'square', false, true);
+gui.add(settings, 'circle', false, true);
 gui.add(settings, 'red', 0, 255);
 gui.add(settings, 'green', 0, 255);
 gui.add(settings, 'blue', 0, 255);
 gui.add(settings, 'alpha', 5, 255);
 gui.add(settings, 'nFrames', 1, 1000);
 gui.add(settings, 'res', 0.001, 0.02);
+
+gui.remember(settings);
 
 
 
@@ -56,6 +61,7 @@ function windowResized() {
 // Main render loop
 function draw() { 
   background(colorPicker.color());
+  stroke(settings.red, settings.green, settings.blue, settings.alpha);
   
   if(settings.play == false) {
     frameCount= 0;
@@ -104,7 +110,7 @@ function playback() {
   for(frame of recorder) {
 
 
-stroke(settings.red,settings.green, settings.blue, settings.alpha);
+
 if(settings.dots) { 
   strokeWeight(settings.weight + 3)
   if(settings.nDots == 1 && settings.lines == false) {
@@ -250,6 +256,52 @@ beginShape();
 }
 
 
+    }
+
+    if(settings.square == true && settings.lines == false && settings.curves == false) {
+    
+      push(); 
+      strokeWeight(settings.weight)
+     
+ 
+      // find the mid point 
+      let midX = lerp(frame.x1, frame.x2, 0.5);
+      let midY = lerp(frame.y1, frame.y2, 0.5); 
+      translate(midX, midY);
+      
+      // find the distance between the points
+      let len = dist(frame.x1, frame.y1, frame.x2, frame.y2);
+      
+      // calculate the angle between two points 
+      let angle = atan2(frame.y1-frame.y2, frame.x1-frame.x2);
+      rectMode(CENTER);
+      noFill();
+      rotate(angle);
+      rect(0, 0, len);
+      pop();
+    }
+
+    if(settings.circle == true && settings.lines == false && settings.curves == false) {
+    
+      push(); 
+      strokeWeight(settings.weight)
+     
+ 
+      // find the mid point 
+      let midX = lerp(frame.x1, frame.x2, 0.5);
+      let midY = lerp(frame.y1, frame.y2, 0.5); 
+      translate(midX, midY);
+      
+      // find the distance between the points
+      let len = dist(frame.x1, frame.y1, frame.x2, frame.y2);
+      
+      // calculate the angle between two points 
+      let angle = atan2(frame.y1-frame.y2, frame.x1-frame.x2);
+      ellipseMode(CENTER);
+      noFill();
+      rotate(angle);
+      ellipse(0, 0, len);
+      pop();
     }
   }
 }
