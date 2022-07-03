@@ -1,3 +1,23 @@
+///dancing dots
+//a tool for procedural drawing
+//Software by Marlon Barrios Solano 2020
+//https://marlonbarrios.github.io/
+//Software for drawing with points in order to create a drawing.
+// It uses the Perlin noise algorithm to animate the 'dots' with a more organic movement and shapes. The circle is hardcoded as a demo when load.
+// You can change the parameters:
+// the background color in the top left and in the top right, you can adjust the number of animated dots ( 1 to 6), the thickness or the weight of the 'pen' the RGB values of the drawing, add connecting lines or curves (its like an explosion) , the alpha level, length of the trailing, lines resolution and capture an image of a moment you like with the key 'p' ( it exports pngs/ SVGs for next version)
+
+
+//MIT License is defined as follows:
+// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+// The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+//MIT License
+
+
+
+
+
 let colorPicker;
 
 let settings = {
