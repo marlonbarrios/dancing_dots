@@ -50,6 +50,8 @@ nFrames:   create longer or short  'traces ' moving the( values get stored as 'l
 
 res: draw instances closer or farther from each other.
 
+If you like the outcome of  some settings you mase use the s'ettings" to save them in the local cache of you browser.
+
 Press 'p' in your keyboard to export and save an image from your canvas.
 
 Share  and enjoy!
