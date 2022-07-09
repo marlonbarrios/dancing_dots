@@ -1,11 +1,13 @@
-# Tool for Meta-creation 01: Drawing Bot with dots, geometries and mathematical noise.
+# Tool for Meta-creation 01: Drawing Bot with dots, geometries and perlin noise.
 
 Concept and Programming: Marlon Barrios Solano
 
 Tech: 
+
 p5.js
 
 html5
+
 css3
 
 ![Screen Sho![botdrawing (2)](https://user-images.githubusercontent.com/90220317/178122624-315254ce-9375-4705-83f6-62a9f0f7327b.png)
