@@ -22,7 +22,7 @@ let settings = {
   // dots: false,
   // nDots: [0],
   // lines: false,
-  red: 0,
+  red: 40,
   green: 0,
   blue: 0,
   play: true,
@@ -70,7 +70,8 @@ gui.add(settings, 'bg_alpha', 5, 255);
 
 
 gui.remember(settings);
-
+ gui.width = 300;
+  gui.close();
  
 background(settings.bg_red, settings.bg_green, settings.bg_blue, settings.bg_alpha);
 
